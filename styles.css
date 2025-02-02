@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  min-height: 100vh;
+}
+
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color:inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.logo a{
+  font-size: 2.5rem;
+  margin-left: 22px;
+  cursor: pointer;
+}
+
+.nav-bar .nav-bar-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-bar .nav-bar-list .nav-bar-item {
+  font-size: 1.37rem;
+  cursor: pointer;
+  margin-right: 22px;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(238, 204, 119);
+}
+
+.container .products-container {
+  background-color: #000;
+  width: 80vw;
+  padding: 45px  0;
+}
+
+.products-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: whitesmoke;
+}
+
+.products-list  {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 50px;
+  list-style: none;
+}
+
+.products-list  .product-card {
+  width: 16vw;
+  height: 40vh;
+  background-color: rgb(230, 226, 226);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.products-list  .product-card img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
+.product-card .product-name {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+ .product-card .product-price {
+  color: rgb(43, 42, 39);
+  font-weight: bold;
+  font-size: 1.37rem;
+}
+
+.btn-add {
+  width: 50px;
+  padding:4px 0;
+  background-color: rgb(230, 189, 86);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 6px;
+  position: absolute;
+  right: 35px;
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
