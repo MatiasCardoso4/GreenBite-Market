@@ -1,12 +1,48 @@
-const products = document.querySelectorAll('.products-list li')
-const price = document.querySelector('.product-price')
-const image = document.querySelector('.product-image')
-const add_btn = document.querySelector('.btn-add')
+const productsList = document.querySelector(".products-list");
+const price = document.querySelector(".product-price");
+const image = document.querySelector(".product-image");
+const add_btn = document.querySelector(".btn-add");
 
-products.forEach((product) => {
-  console.log(product.children[1].textContent);
-})
+async function getProducts() {
+  try {
+    const response = await fetch("./products.json");
+    const data = await response.json();
+    setDisplay(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-let productsList = []
+const createElements = (product) => {
+  /*Creating Cards Elements */
+  const productCard = document.createElement("li");
+  const productName = document.createElement("h2");
+  const productImage = document.createElement("img");
+  const productPrice = document.createElement("span");
+  const addBtn = document.createElement('button')
+  /*Elements Classes*/
+  productCard.classList.add("product-card");
+  productName.classList.add("product-name");
+  productImage.classList.add("product-image");
+  productPrice.classList.add("product-price");
+  addBtn.classList.add('btn-add')
+ 
+  /*Setting the content on the elements*/ 
+  productName.textContent = product.name;
+  productImage.src = product.image;
+  productPrice.textContent = `$${product.price}`;
+  addBtn.innerHTML = '+'
 
+  /*Adding the elements to their parents*/
+  productCard.append(productImage, productName, productPrice,addBtn);
+  productsList.appendChild(productCard);
+};
+/*Setting the display */
+const setDisplay = (products) => {
+  products.forEach((product) => {
+    createElements(product);
+  });
+};
 
+getProducts();

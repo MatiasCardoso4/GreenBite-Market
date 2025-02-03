@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Fruit Basket",
+    "image": "./assests/How To Make A Thick Strawberry Smoothie Bowl with No Banana.jpg",
+    "price": "3"
+  },
+  {
+    "name": "Crunchy Green Salad",
+    "image": "./assests/GreenSalad.jpg",
+    "price": "4"
+  },
+  {
+    "name": "Cinnamon Raisin Sourdough Bread",
+    "image": "./assests/Cinnamon Raisin Sourdough Bread.jpg",
+    "price": "3"
+  },
+  {
+    "name": "Wellsley Farms Roasted",
+    "image": "./assests/Wellsley Farms Roasted.jpg",
+    "price": "4"
+  },
+  {
+    "name": "Avocado Egg Toast",
+    "image": "./assests/Avocado Egg Toast.jpg",
+    "price": "5"
+  },
+  {
+    "name": "Vegan Quinoa Salad",
+    "image": "./assests/Vegan Quinoa Salad.jpg",
+    "price": "5"
+  }
+]

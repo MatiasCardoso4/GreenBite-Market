@@ -96,7 +96,7 @@ a {
   position: relative;
 }
 
-.products-list  .product-card img {
+.products-list  .product-card .product-image {
   width: 100%;
   height: 30vh;
   object-fit: cover;
@@ -107,6 +107,7 @@ a {
   margin-bottom: 20px;
   margin-top: 8px;
   font-size: 1rem;
+  color: red;
 }
 
  .product-card .product-price {
