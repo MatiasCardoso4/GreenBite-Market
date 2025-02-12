@@ -52,4 +52,4 @@ const setDisplay = (products) => {
   });
 };
 
-getProducts();
+window.addEventListener('DOMContentLoaded', getProducts)

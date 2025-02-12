@@ -1,12 +1,15 @@
 const cartList = document.querySelector(".cart-list");
 
-const recoverCart = JSON.parse(localStorage.getItem("cart"))
-const cart = recoverCart ? recoverCart : [] ;
+const storedCart =  JSON.parse(localStorage.getItem("cart")) || []
+const recoverStorage = [...storedCart];
+
+const cart = recoverStorage;
 
 export function addProduct(product) {
   const newProduct = {
     name: product.name,
     price: product.price,
+    image: product.image,
     quantity: 1,
     id: cart.length + 1,
   };
@@ -14,32 +17,31 @@ export function addProduct(product) {
   const isProductInCart = cart.findIndex((p) => p.name === newProduct.name);
   if (isProductInCart !== -1) {
     cart[isProductInCart].quantity++;
-    localStorage.setItem("cart", JSON.stringify(cart));
   } else {
     cart.push(newProduct);
-    localStorage.setItem("cart", JSON.stringify(cart));
   }
+  localStorage.setItem('cart', JSON.stringify(cart))
 
   return cart;
 }
 
-const createCart = (product) => {
+function createCart (product){
   const cartItem = document.createElement("li");
   const productName = document.createElement("h2");
   const productImage = document.createElement("img");
   const productPrice = document.createElement("span");
   productName.textContent = product.name;
-  productImage.src = product.image
+  productImage.src = product.image;
+  productImage.alt = 'product image'
   productPrice.textContent = product.price;
-  cartItem.append(productName, productPrice);
+  cartItem.append(productName, productImage,productPrice);
 
- cartList.append(cartItem)
+  cartList.appendChild(cartItem);
 };
 
-const setDisplay = () => {
-  cart.forEach((product) => {
-    createCart(product);
-  });
+function setCartDisplay() {
+  cart.forEach(createCart)
 };
 
-setDisplay();
+
+window.addEventListener('DOMContentLoaded',setCartDisplay)
