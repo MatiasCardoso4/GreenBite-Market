@@ -1,7 +1,7 @@
+import { addProduct } from "./pages/cart/cart.js";
+
 const productsList = document.querySelector(".products-list");
-const price = document.querySelector(".product-price");
-const image = document.querySelector(".product-image");
-const add_btn = document.querySelector(".btn-add");
+
 
 async function getProducts() {
   try {
@@ -37,6 +37,13 @@ const createElements = (product) => {
   /*Adding the elements to their parents*/
   productCard.append(productImage, productName, productPrice,addBtn);
   productsList.appendChild(productCard);
+
+
+  addBtn.addEventListener('click', ()=> {
+    addProduct(product)
+  })
+  
+
 };
 /*Setting the display */
 const setDisplay = (products) => {
